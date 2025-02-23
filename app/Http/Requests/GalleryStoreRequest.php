@@ -27,16 +27,10 @@ class GalleryStoreRequest extends FormRequest
             'item_alt' => 'required',
             'item_description' => 'required',
             'item_link' => 'required',
-            'status' => 'required',
             'thumbnail' => 'required',
             'item' => 'required',
         ];
     }
 
- /*   public function messages(): array
-    {
-        return [
-            'title.required' => 'Title is required',
-        ];
-    }*/
+
 }
