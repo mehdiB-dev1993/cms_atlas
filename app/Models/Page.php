@@ -18,7 +18,7 @@ class Page extends Model
             'keywords',
             'source',
             'header_image',
-            'thumb',
+            'thumbnail',
             'icon',
             'date',
             'order',

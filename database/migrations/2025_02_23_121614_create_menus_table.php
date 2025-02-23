@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('text');
             $table->text('full_text');
             $table->string('keywords');
-            $table->string('thumb');
+            $table->string('thumbnail');
             $table->string('icon');
             $table->string('header_image');
             $table->integer('order')->index();

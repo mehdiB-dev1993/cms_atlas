@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('keywords')->nullable();
             $table->string('source');
             $table->string('header_image');
-            $table->string('thumb')->nullable();
+            $table->string('thumbnail')->nullable();
             $table->string('icon')->nullable();
             $table->string('date')->index();
             $table->integer('order')->index();

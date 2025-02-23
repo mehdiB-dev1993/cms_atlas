@@ -13,7 +13,7 @@ class Menu extends Model
         'text',
         'full_text',
         'keywords',
-        'thumb',
+        'thumbnail',
         'icon',
         'header_image',
         'order',
