@@ -18,4 +18,9 @@ class Gallery extends Model
     {
         return $this->hasMany(GalleryItems::class);
     }
+
+    public function pages(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Page::class);
+    }
 }

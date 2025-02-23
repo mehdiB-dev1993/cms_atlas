@@ -26,9 +26,16 @@ class Page extends Model
         ];
 
 
+
+
         public function menus(): \Illuminate\Database\Eloquent\Relations\HasMany
         {
             return $this->hasMany(Menu::class);
+        }
+
+        public function gallery(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+        {
+            return $this->belongsTo(Gallery::class);
         }
 
 }
