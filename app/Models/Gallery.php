@@ -8,6 +8,14 @@ class Gallery extends Model
 {
     protected $fillable =
         [
-
+            'title',
+            'description',
+            'thumbnail',
+            'status',
         ];
+
+    public function GalleryItems(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(GalleryItems::class);
+    }
 }
