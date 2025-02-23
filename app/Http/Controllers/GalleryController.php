@@ -6,5 +6,9 @@ use Illuminate\Http\Request;
 
 class GalleryController extends Controller
 {
-    //
+
+    public function index(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory
+    {
+        return view('admin.gallery.list');
+    }
 }

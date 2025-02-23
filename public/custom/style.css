@@ -2,3 +2,9 @@ select
 {
     background-position: left 0.75rem center!important;
 }
+
+
+.sidebar .nav .nav-item .nav-link i, .sidebar .nav .nav-item .navbar .dropdown-toggle i, .navbar .sidebar .nav .nav-item .dropdown-toggle i
+{
+    margin: 0 0.5rem 0 0.5rem!important;
+}
