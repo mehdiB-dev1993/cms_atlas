@@ -22,5 +22,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function()
 Route::group(['prefix'=>'gallery','namespace'=>'Gallery'],function()
 {
     Route::get('/', [GalleryController::class, 'index'])->name('gallery.index');
+    Route::get('/create', [GalleryController::class, 'create'])->name('gallery.create');
+    Route::post('/store', [GalleryController::class, 'store'])->name('gallery.store');
 }
 );

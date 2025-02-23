@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row mb-5">
-        <div class="col-lg-2"><a href="" class="btn btn-success">افزودن</a></div>
+        <div class="col-lg-2"><a href="{{ route('gallery.create') }}" class="btn btn-success">افزودن</a></div>
         <div class="col-lg-2"></div>
         <div class="col-lg-2"></div>
         <div class="col-lg-2"></div>
