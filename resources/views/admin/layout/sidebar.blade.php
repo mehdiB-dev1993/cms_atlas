@@ -3,11 +3,21 @@
         <ul class="nav">
 
             <li class="nav-title">
-                پنل مدیریت
+               {{ __('messages.Management_panel') }}
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.dashboard.index') }}"><i class="icon-speedometer"></i> داشبورد {{--<span class="badge badge-primary"></span>--}}</a>
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-menu"></i>تنظیمات گالری</a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="" target="_top">مشاهده لیست گالری</a>
+
+                    </li>
+                </ul>
+            </li>
+
+{{--            <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.dashboard.index') }}"><i class="icon-speedometer"></i> داشبورد --}}{{--<span class="badge badge-primary"></span>--}}{{--</a>
             </li>
 
             <li class="divider"></li>
@@ -44,7 +54,7 @@
                         <a class="nav-link" href="{{ route('gallery.index') }}" target="_top">مشاهده لیست گالری</a>
                     </li>
                 </ul>
-            </li>
+            </li>--}}
 
 
         </ul>
