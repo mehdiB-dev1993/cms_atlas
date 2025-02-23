@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-9">
             <div class="card">
                 <div class="card-header">
                     <strong>افزودن گالری جدید</strong>
@@ -95,7 +95,7 @@
 
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
 
 
 

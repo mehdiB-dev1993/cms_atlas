@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GalleryStoreRequest;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -17,8 +18,9 @@ class GalleryController extends Controller
         return view('admin.gallery.create');
     }
 
-    public function store(Request $request)
+    public function store(GalleryStoreRequest $request)
     {
-        dd($request);
+        $request->validated();
+
     }
 }
