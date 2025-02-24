@@ -21,6 +21,16 @@ select
     width: 200px!important;
 }
 
+.box-thumbnail-sm
+{
+    width: 100px!important;
+}
+.box-thumbnail-lg
+{
+    width: 300px!important;
+}
+
+
 td
 {
     vertical-align: middle!important;
@@ -31,4 +41,16 @@ th
 {
     vertical-align: middle!important;
     text-align: center!important;
+}
+
+
+.plus
+{
+    color: #4dbd74!important;
+    font-size: 24pt;
+}
+
+.modal-lg
+{
+    max-width: 60%!important;
 }

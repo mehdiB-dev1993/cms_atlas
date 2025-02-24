@@ -114,6 +114,8 @@
 <script src="{{ asset('bootstrap-datatables/js/dataTables.min.js') }}"></script>
 
 
+@yield('custom-js')
+
 </body>
 
 </html>

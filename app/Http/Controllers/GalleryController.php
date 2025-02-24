@@ -6,6 +6,7 @@ use App\Http\Requests\GalleryStoreRequest;
 use App\Models\Gallery;
 use App\Models\GalleryItems;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class GalleryController extends Controller
 {
@@ -70,7 +71,21 @@ class GalleryController extends Controller
             return redirect()->back()->with('error', $exception->getMessage());
         }
 
-
-
     }
+
+
+
+    public function edit(Request $request)
+    {
+        //$gallery =  Gallery::find($request->id)->galleryItems()->get();
+        $gallery =  Gallery::with('galleryItems')->find($request->id);
+        return response()->json($gallery);
+    }
+
+
+    public function update(Request $request)
+    {
+        return $request;
+    }
+
 }
