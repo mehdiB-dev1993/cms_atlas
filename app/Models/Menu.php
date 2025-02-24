@@ -25,4 +25,10 @@ class Menu extends Model
     {
         return $this->belongsTo(Page::class);
     }
+
+    public function childrenRecursive()
+    {
+        return $this->hasMany(Menu::class, 'parent_id')->with('childrenRecursive');
+    }
+
 }

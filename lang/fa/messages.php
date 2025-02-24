@@ -6,5 +6,7 @@ return [
     'Gallery_settings' => 'تنظیمات گالری',
     'View_the_gallery_list' => 'مشاهده لیست گالری',
     'Site_banner_settings' => 'تنظیمات بنر',
-    'View_the_list_of_banners' => 'مشاهده لیست بنر ها'
+    'View_the_list_of_banners' => 'مشاهده لیست بنر ها',
+    'Menu_settings' => 'تنظیمات منو',
+    'View_the_menu_list' => 'مشاهده لیست منو'
 ];
