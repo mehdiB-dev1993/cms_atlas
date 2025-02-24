@@ -34,6 +34,13 @@ $('body').on('click','#submit-slider-store',function ()
     }
 )
 
+$('body').on('click','#submit-menu-update',function ()
+    {
+        $('#menu-update').submit()
+    }
+)
+
+
 
 
 

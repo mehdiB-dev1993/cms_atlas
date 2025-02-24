@@ -72,4 +72,54 @@ class MenuController extends Controller
 
     }
 
+
+    public function edit(Request $request)
+    {
+        $menu = Menu::find($request->id);
+        $menus = Menu::where('parent_id', 0)->with('childrenRecursive')->get();
+        return view('admin.menu.menu-edit')->with('this_menu', $menu)->with('menus', $menus);
+    }
+
+    public function update(Request $request)
+    {
+        try
+        {
+            $menu = Menu::find($request->menu_id);
+
+            $menu->parent_id = intval( $request->parent_id );
+            $menu->title = $request->title;
+            $menu->description = $request->description;
+            $menu->text	= $request->text;
+            $menu->full_text = $request->full_text;
+            $menu->keywords = $request->keywords;
+            if ($request->hasFile('icon'))
+            {
+                $path_icon = $request->file('icon')->store('uploads/icons', 'public');
+                $menu->icon = $path_icon;
+            }
+
+            if ($request->hasFile('thumbnail'))
+            {
+                $path_thumbnail = $request->file('thumbnail')->store('uploads/thumbnail', 'public');
+                $menu->thumbnail = $path_thumbnail;
+            }
+
+            if ($request->hasFile('header_image'))
+            {
+                $path_header_image = $request->file('header_image')->store('uploads/header_image', 'public');
+                $menu->header_image = $path_header_image;
+            }
+
+
+            $menu->order = 0;
+            $menu->save();
+
+            return redirect()->back()->with('success', 'عملیات با موفقیت انجام شد.');
+
+        }
+        catch (\Exception $e)
+        {
+            return  redirect()->back()->with('error', $e->getMessage());
+        }
+    }
 }

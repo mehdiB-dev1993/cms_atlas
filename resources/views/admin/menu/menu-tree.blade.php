@@ -7,7 +7,7 @@
     </span>
 
     <span>
-        (  <a href="{{ route('menu.edit',['id' => $menu->id]) }}"><i class="bi bi-pencil-square"></i></a> | <a href="{{ route('menu.destroy',['id' => $menu->id]) }}"><i class="bi bi-trash-fill"></i></a> )
+        (  <a href="{{ route('menu.edit',['id' => $menu->id]) }}"><i onclick="" class="bi bi-pencil-square"></i></a> | <a href="{{ route('menu.destroy',['id' => $menu->id]) }}"><i class="bi bi-trash-fill"></i></a> )
     </span>
 
     @if($menu->childrenRecursive->isNotEmpty())

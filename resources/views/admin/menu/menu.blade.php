@@ -3,6 +3,7 @@
 {{--@dd($menus)--}}
 @section('content')
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
     <style>
 
         ul
@@ -90,6 +91,14 @@
         </div>
 
     </div>
+
+
+@endsection
+
+
+
+
+@section('custom-js')
 
 
 @endsection

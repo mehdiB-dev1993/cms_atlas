@@ -93,14 +93,11 @@
 
 
                         <div class="form-group row">
-                            <label class="col-md-3 form-control-label">انتشار:</label>
+                            <label class="col-md-3 form-control-label">وضعیت:</label>
                             <div class="col-md-9">
                                 <div class="checkbox">
-
-
-
                                     <label for="">
-                                        <input class="form-check-input" type="checkbox" id="" name="is_published" >
+                                        <input class="form-check-input" type="checkbox" id="" name="status" >
                                     </label>
                                 </div>
                             </div>
