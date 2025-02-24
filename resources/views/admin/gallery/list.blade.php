@@ -126,7 +126,7 @@
                         {
                             let $item_src = '<?= asset("storage/' + value.src + '") ?>';
 
-                            $tag_items += '<tr>'
+                            $tag_items += '<tr data-number="'+index+'">'
                             $tag_items += '<td class="box-thumbnail position-relative"><input type="hidden" name="item_'+index+'[id]" value="'+ value.id +'"><img class="preview-img" src="'+$item_src+'" alt="Image preview" style="max-width: 100%;"><input name="item_'+index+'[src]" onchange="preview(this)" class="w-100 position-absolute h-100 " style="left: 0;top: 0;opacity: 0" type="file" ></td>'
                             $tag_items += '<td><input class="form-control" name="item_'+index+'[alt]" type="text" value="'+ value.alt +'"></td>'
                             $tag_items += '<td><input class="form-control" name="item_'+index+'[link]" type="text" value=" '+ value.link +' "></td>'
@@ -140,14 +140,16 @@
 
 
                     console.log($items)
-                    $('body').find('#gallery-edit').append('<hr><i onclick="plus()" class="bi bi-plus-square-fill plus"></i>')
+                    $('body').find('#gallery-edit').append('<hr><i onclick="plus(this)" class="bi bi-plus-square-fill plus"></i>')
 
 
                 }
             )
         }
         /**************************************************/
-        function plus() {
+        function plus(tag) {
+
+
 
               const $tmp =  '<tr>' +
                 '<td class="box-thumbnail position-relative" style="cursor: pointer"><span class="help">کلیک کن</span><img class="preview-img" src="" alt="Image preview" style="max-width: 100%; display: none;"><input onchange="preview(this)" class="w-100 position-absolute h-100 " style="left: 0;top: 0;opacity: 0" type="file" name="items_src[]"></td>' +
