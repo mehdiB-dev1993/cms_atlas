@@ -28,6 +28,12 @@ $('body').on('click','#submit-gallery-store',function ()
     }
 )
 
+$('body').on('click','#submit-slider-store',function ()
+    {
+        $('#slider-store').submit()
+    }
+)
+
 
 
 

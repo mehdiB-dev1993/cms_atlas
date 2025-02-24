@@ -16,6 +16,16 @@
                 </ul>
             </li>
 
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#"><i class="bi bi-card-image"></i><span>{{ __('messages.Site_banner_settings') }}</span></a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('slider.index') }}" target="_top">{{ __('messages.View_the_list_of_banners') }}</a>
+
+                    </li>
+                </ul>
+            </li>
+
 {{--            <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin.dashboard.index') }}"><i class="icon-speedometer"></i> داشبورد --}}{{--<span class="badge badge-primary"></span>--}}{{--</a>
             </li>

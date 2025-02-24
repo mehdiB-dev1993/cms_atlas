@@ -44,7 +44,7 @@
                                 @endif
                             </td>
                             <td><i class="bi bi-trash cursor-pointer "></i></td>
-                            <td><i onclick="sliderEdit('{{ route('gallery.edit',$gallery->id) }}')" class="bi bi-pencil-square"></i></td>
+                            <td><i onclick="GalleryEdit('{{ route('gallery.edit',$gallery->id) }}')" class="bi bi-pencil-square"></i></td>
 
                         </tr>
                         @endforeach
@@ -74,7 +74,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">ویرایش اسلایدر</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">ویرایش گالری</h1>
                     <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -92,7 +92,7 @@
 
     <script>
         /**************************************************/
-        function sliderEdit($url)
+        function GalleryEdit($url)
         {
             $.ajax(
                 {
@@ -233,6 +233,7 @@
                     if(response.success)
                     {
                         alert('عملیات با موفقیت انجام شد.')
+                        location.reload()
 
                     }
                     else
