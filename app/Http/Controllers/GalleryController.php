@@ -156,37 +156,36 @@ class GalleryController extends Controller
 
 
 
-            $GalleryItems = request()->only(['item_alt', 'items_src', 'item_link']);
+            if ($request->has('item_alt') && $request->has('items_src')&& $request->has('item_alt')) {
 
-            $new_items = [];
+                $GalleryItems = request()->only(['item_alt', 'items_src', 'item_link']);
 
-            foreach ($GalleryItems['items_src'] as $index => $imgSrc) {
+                $new_items = [];
 
-                $originalName = $imgSrc->getClientOriginalName();
-                $src = $imgSrc->storeAs('uploads/gallery', $originalName, 'public');
+                foreach ($GalleryItems['items_src'] as $index => $imgSrc) {
 
-                $new_items[] = [
-                    'title'        => $originalName,
-                    'description'  => '',
-                    'gallery_id'   => $gallery->id,
-                    'src'          => $src,
-                    'alt'          => $GalleryItems['item_alt'][$index] ?? null,
-                    'link'         => $GalleryItems['item_link'][$index] ?? null,
-                    'status'       => 1
-                ];
+                    $originalName = $imgSrc->getClientOriginalName();
+                    $src = $imgSrc->storeAs('uploads/gallery', $originalName, 'public');
+
+                    $new_items[] = [
+                        'title' => $originalName,
+                        'description' => '',
+                        'gallery_id' => $gallery->id,
+                        'src' => $src,
+                        'alt' => $GalleryItems['item_alt'][$index] ?? null,
+                        'link' => $GalleryItems['item_link'][$index] ?? null,
+                        'status' => 1
+                    ];
+                }
+
+
+                $gallery->galleryItems()->createMany($new_items);
+
             }
 
 
-            $gallery->galleryItems()->createMany($new_items);
 
-
-
-
-
-            return redirect()->back()->with('success', 'Gallery updated successfully');
-
-
-
+            return response()->json(['success' => 'Gallery updated successfully']);
 
 
         }

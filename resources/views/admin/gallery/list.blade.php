@@ -223,9 +223,22 @@
                     url : '<?= route('gallery.update') ?>',
                     data : $data,
                     method : 'post',
+                    dataType: 'json',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
                     processData: false,
                     contentType: false,
                 }).done(function (response){
+                    if(response.success)
+                    {
+                        alert('عملیات با موفقیت انجام شد.')
+
+                    }
+                    else
+                    {
+                        alert('خطا')
+                    }
                     console.log(response)
                 })
 
