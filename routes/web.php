@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use \App\Http\Controllers\SliderController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\PageController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -55,6 +56,18 @@ Route::group(['prefix' => 'menu'], function ()
     Route::get('/edit/{id}', [MenuController::class,'edit'])->name('menu.edit');
     Route::post('/update', [MenuController::class,'update'])->name('menu.update');
 
+}
+);
+
+
+Route::group(['prefix' => 'page'], function ()
+{
+    Route::get('/list',[PageController::class,'index'])->name('page.index');
+    Route::get('/create', [PageController::class,'create'])->name('page.create');
+    Route::post('/store', [PageController::class,'store'])->name('page.store');
+    Route::get('/edit/{id}', [PageController::class,'edit'])->name('page.edit');
+    Route::post('/update', [PageController::class,'update'])->name('page.update');
+    Route::get('/destroy/{id}', [PageController::class,'destroy'])->name('page.destroy');
 }
 );
 

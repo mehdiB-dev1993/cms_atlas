@@ -16,8 +16,19 @@
                 </ul>
             </li>
 
+
             <li class="nav-item nav-dropdown">
-                <a class="nav-link nav-dropdown-toggle" href="#"><i class="bi bi-card-image"></i><span>{{ __('messages.Gallery_settings') }}</span></a>
+                <a class="nav-link nav-dropdown-toggle" href="#"><i class="bi bi-file-earmark-richtext"></i>{{ __('messages.Page_settings') }}</a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('page.index') }}" target="_top">{{ __('messages.View_the_list_of_pages') }}</a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#"><i class="bi bi-images"></i><span>{{ __('messages.Gallery_settings') }}</span></a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('gallery.index') }}" target="_top">{{ __('messages.View_the_gallery_list') }}</a>
@@ -27,7 +38,7 @@
             </li>
 
             <li class="nav-item nav-dropdown">
-                <a class="nav-link nav-dropdown-toggle" href="#"><i class="bi bi-card-image"></i><span>{{ __('messages.Site_banner_settings') }}</span></a>
+                <a class="nav-link nav-dropdown-toggle" href="#"><i class="bi bi-image-alt"></i><span>{{ __('messages.Site_banner_settings') }}</span></a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('slider.index') }}" target="_top">{{ __('messages.View_the_list_of_banners') }}</a>
@@ -36,45 +47,6 @@
                 </ul>
             </li>
 
-{{--            <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.dashboard.index') }}"><i class="icon-speedometer"></i> داشبورد --}}{{--<span class="badge badge-primary"></span>--}}{{--</a>
-            </li>
-
-            <li class="divider"></li>
-
-
-
-
-
-            <li class="nav-item nav-dropdown">
-                <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-menu"></i>تنظیمات منو</a>
-                <ul class="nav-dropdown-items">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('menu.index') }}" target="_top">مشاهده لیست منو</a>
-
-                    </li>
-                </ul>
-            </li>
-
-
-            <li class="nav-item nav-dropdown">
-                <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-menu"></i>تنظیمات صفحات</a>
-                <ul class="nav-dropdown-items">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('page.index') }}" target="_top">مشاهده لیست صفحات</a>
-                    </li>
-                </ul>
-            </li>
-
-
-            <li class="nav-item nav-dropdown">
-                <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-menu"></i>تنظیمات گالری</a>
-                <ul class="nav-dropdown-items">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('gallery.index') }}" target="_top">مشاهده لیست گالری</a>
-                    </li>
-                </ul>
-            </li>--}}
 
 
         </ul>

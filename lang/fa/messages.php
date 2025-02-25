@@ -8,5 +8,7 @@ return [
     'Site_banner_settings' => 'تنظیمات بنر',
     'View_the_list_of_banners' => 'مشاهده لیست بنر ها',
     'Menu_settings' => 'تنظیمات منو',
-    'View_the_menu_list' => 'مشاهده لیست منو'
+    'View_the_menu_list' => 'مشاهده لیست منو',
+    'Page_settings' => 'تنظیمات صفحات',
+    'View_the_list_of_pages' => 'مشاهده لیست صفحات'
 ];
