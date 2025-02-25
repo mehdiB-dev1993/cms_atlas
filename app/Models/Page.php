@@ -8,7 +8,6 @@ class Page extends Model
 {
     protected $fillable =
         [
-            'menu_id',
             'gallery_id',
             'title',
             'title_in_menu',
@@ -28,9 +27,9 @@ class Page extends Model
 
 
 
-        public function menus(): \Illuminate\Database\Eloquent\Relations\HasMany
+        public function menu(): \Illuminate\Database\Eloquent\Relations\HasMany
         {
-            return $this->hasMany(Menu::class);
+            return $this->hasMany(Menu::class,'page_id');
         }
 
         public function gallery(): \Illuminate\Database\Eloquent\Relations\BelongsTo

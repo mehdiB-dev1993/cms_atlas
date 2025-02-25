@@ -12,7 +12,8 @@ class PageController extends Controller
 {
     public function index()
     {
-        return view('page.index');
+        $pages = Page::with('menu')->get();
+        return view('page.index')->with('pages',$pages);
     }
 
     public function create()
@@ -28,7 +29,6 @@ class PageController extends Controller
         try
         {
             $page = new Page();
-            $page->menu_id = $request->menu_id;
             $page->gallery_id = $request->gallery_id;
             $page->title = $request->title;
             $page->title_in_menu = $request->title_in_menu;
@@ -61,6 +61,13 @@ class PageController extends Controller
             }
 
             $page->save();
+
+
+            $menu = Menu::find($request->menu_id);
+            $menu->update([
+                'page_id'=> $page->id
+            ]);
+
 
             return redirect()->back()->with('success','page created successfully');
 

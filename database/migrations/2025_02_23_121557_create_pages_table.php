@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('menu_id')->index()->constrained('menus')->onDelete('cascade');
             $table->foreignId('gallery_id')->index()->constrained('gallery')->onDelete('cascade');
             $table->string('title');
             $table->string('title_in_menu');

@@ -1,5 +1,6 @@
 @extends('admin.layout.layout')
 
+@dd($pages)
 
 @section('content')
 
