@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminController;
 use \App\Http\Controllers\SliderController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CourseGroupController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -68,6 +70,28 @@ Route::group(['prefix' => 'page'], function ()
     Route::get('/edit/{id}', [PageController::class,'edit'])->name('page.edit');
     Route::post('/update', [PageController::class,'update'])->name('page.update');
     Route::get('/destroy/{id}', [PageController::class,'destroy'])->name('page.destroy');
+}
+);
+
+
+
+
+Route::group(['prefix' => 'course'], function ()
+{
+    Route::get('/list',[CourseController::class,'index'])->name('course.index');
+
+}
+);
+
+Route::group(['prefix' => 'course_group'], function ()
+{
+    Route::get('/list',[CourseGroupController::class,'index'])->name('course_group.index');
+    Route::get('/create', [CourseGroupController::class,'create'])->name('course_group.create');
+    Route::post('/store', [CourseGroupController::class,'store'])->name('course_group.store');
+    Route::get('/edit/{id}', [CourseGroupController::class,'edit'])->name('course_group.edit');
+    Route::post('/update', [CourseGroupController::class,'update'])->name('course_group.update');
+    Route::get('/destroy/{id}', [CourseGroupController::class,'destroy'])->name('course_group.destroy');
+
 }
 );
 

@@ -52,12 +52,12 @@
                 <a class="nav-link nav-dropdown-toggle" href="#"><i class="bi bi-box-fill"></i><span>{{ __('messages.Courses') }}</span></a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="" target="_top">{{ __('messages.View_the_list_of_Courses_groups') }}</a>
+                        <a class="nav-link" href="{{ route('course_group.index') }}" target="_top">{{ __('messages.View_the_list_of_Courses_groups') }}</a>
 
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="" target="_top">{{ __('messages.View_the_list_of_Courses') }}</a>
+                        <a class="nav-link" href="{{ route('course.index') }}" target="_top">{{ __('messages.View_the_list_of_Courses') }}</a>
 
                     </li>
 

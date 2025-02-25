@@ -23,9 +23,7 @@
                             <div class="col-md-9">
                                 <select name="parent_id" class="form-select">
                                     <option value="0">منوی اصلی</option>
-                                    @php $selected = '' @endphp
                                     @foreach($menus as $menu)
-
                                         @include('admin.menu.menu-option', ['menu' => $menu, 'level' => 0])
                                     @endforeach
                                 </select>

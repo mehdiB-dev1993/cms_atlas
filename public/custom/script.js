@@ -41,6 +41,20 @@ $('body').on('click','#submit-menu-update',function ()
 )
 
 
+$('body').on('click','#submit-course-group-store',function ()
+    {
+        $('#course-group-store').submit()
+    }
+)
+
+$('body').on('click','#submit-course-group-update',function ()
+    {
+        $('#course-group-update').submit()
+    }
+)
+
+
+
 
 
 

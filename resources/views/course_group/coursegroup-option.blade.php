@@ -1,0 +1,7 @@
+<option value="{{ $cg->id }}">{{ str_repeat('----', $level) }} {{ $cg->title }}</option>
+
+@if($cg->childrenRecursive->isNotEmpty())
+    @foreach($cg->childrenRecursive as $child)
+        @include('course_group.coursegroup-option', ['cg' => $child, 'level' => $level + 1])
+    @endforeach
+@endif
