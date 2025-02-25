@@ -18,7 +18,7 @@
 
 
                 <div class="card-body">
-                    <form action="" id="page-store" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <form action="{{ route('page.update') }}" id="page-update" method="post" enctype="multipart/form-data" class="form-horizontal">
                         @csrf
 
                         <div class="form-group row">
@@ -31,6 +31,8 @@
                                 </select>
                             </div>
                         </div>
+
+                        <input type="hidden" name="page_id" value="{{ $page->id }}">
 
 
                         <div class="form-group row">
@@ -90,6 +92,12 @@
                                 </div>
                             </div>
                         </div>
+
+                        <hr>
+                        <div class="alert alert-warning text-center" role="alert">
+                            <span class="help">جهت بارگذاری فایل تصویر جدید، در هرکدام از فیلد های زیر روی تصویر کلیک کنید.</span>
+                        </div>
+                        <hr>
 
                         <div class="form-group row">
                             <label class="col-md-3 form-control-label " for="">آیکون:</label>
@@ -160,7 +168,7 @@
                     </form>
                 </div>
                 <div class="card-footer">
-                    <button type="ارسال" id="submit-page-store" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> ارسال</button>
+                    <button type="ارسال" id="submit-page-update" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> ارسال</button>
                     <button type="بازیابی" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> بازیابی</button>
                 </div>
             </div>
