@@ -1,6 +1,6 @@
 @extends('admin.layout.layout')
 
-@dd($pages)
+
 
 @section('content')
 
@@ -56,11 +56,11 @@
                         @if(@isset($pages))
                         @foreach($pages as $page)
                             <tr>
-                                <td class="align-middle text-center">{{ $page->full_page_name }}</td>
-                                <td class="align-middle text-center">{{ $page->page_name_in_menu }}</td>
+                                <td class="align-middle text-center">{{ $page->title }}</td>
+                                <td class="align-middle text-center">{{ $page->title_in_menu }}</td>
                                 <td class="align-middle text-center">{{ $page->source }}</td>
                                 <td class="box-img"><img src="{{ asset('storage/' . $page->icon) }}" alt="Icon"></td>
-                                <td class="box-img"><img src="{{ asset('storage/' . $page->thumb) }}" alt="Icon"></td>
+                                <td class="box-img"><img src="{{ asset('storage/' . $page->thumbnail) }}" alt="Icon"></td>
                                 <td class="box-img"><img src="{{ asset('storage/' . $page->header_image) }}" alt="Icon"></td>
                                 <td class="align-middle text-center"><span class="badge badge-success">Active</span></td>
                                 <td class="align-middle text-center"><a href="{{ route('page.edit',['id' => $page->id]) }}"><i class="bi bi-pencil-square"></i></a></td>
@@ -70,23 +70,7 @@
                         @endif
                         </tbody>
                     </table>
-                    <nav>
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">Prev</a>
-                            </li>
-                            <li class="page-item active">
-                                <a class="page-link" href="#">1</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">3</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">4</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a>
-                            </li>
-                        </ul>
-                    </nav>
+
                 </div>
             </div>
         </div>

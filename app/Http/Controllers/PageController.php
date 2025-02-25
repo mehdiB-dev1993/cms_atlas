@@ -38,6 +38,7 @@ class PageController extends Controller
             $page->keywords = $request->keywords;
             $page->source = $request->source;
             $page->order = 0;
+            $page->status = $request->has('status') ? 1 : 0;
             $page->date = $request->date;
 
             if ($request->hasFile('page_icon'))
@@ -76,5 +77,13 @@ class PageController extends Controller
         {
             return redirect()->back()->with('error',$e->getMessage());
         }
+    }
+
+    public function edit(Request $request)
+    {
+        $menus = Menu::where('parent_id', 0)->with('childrenRecursive')->get();
+        $galleries = Gallery::all();
+        $page = Page::find($request->id);
+        return view('page.page-edit')->with('menus', $menus)->with('galleries', $galleries)->with('page', $page);
     }
 }
