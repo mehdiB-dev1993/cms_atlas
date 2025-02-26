@@ -24,7 +24,7 @@
                                 <select name="parent_id" class="form-select">
                                     <option value="0">منوی اصلی</option>
                                     @foreach($menus as $menu)
-                                        @include('admin.menu.menu-option', ['menu' => $menu, 'level' => 0])
+                                        @include('menu.menu-option', ['menu' => $menu, 'level' => 0,'selected' => ''])
                                     @endforeach
                                 </select>
                             </div>
@@ -89,6 +89,17 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label">ترتیب نمایش:</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+
+                                        <input class="form-control" type="number" min="0" value="0" name="order" >
+
+                                </div>
+                            </div>
+                        </div>
+
 
                         <div class="form-group row">
                             <label class="col-md-3 form-control-label">وضعیت:</label>
@@ -144,7 +155,6 @@
             @endif
         </div>
 
-        <!--/.col-->
     </div>
 
 

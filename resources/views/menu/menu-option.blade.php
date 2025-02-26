@@ -2,6 +2,6 @@
 
 @if($menu->childrenRecursive->isNotEmpty())
     @foreach($menu->childrenRecursive as $child)
-        @include('admin.menu.menu-option', ['menu' => $child, 'level' => $level + 1,'selected' => $selected])
+        @include('menu.menu-option', ['menu' => $child, 'level' => $level + 1,'selected' => $selected])
     @endforeach
 @endif

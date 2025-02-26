@@ -146,3 +146,23 @@ document.querySelector('.add').addEventListener('click', function () {
 });
 /**************************************************/
 
+function preview_main(tag)
+{
+    var file = tag.files[0];
+
+    var reader = new FileReader();
+
+
+    if (file && file.type.startsWith('image')) {
+        reader.onload = function(e) {
+            var previewImage = $(tag).parents('.box-thumbnail-lg').find('.preview-image');
+
+            previewImage.attr('src', e.target.result);
+            previewImage.show();
+        };
+    }
+    reader.readAsDataURL(file);
+    $(tag).parents('tr').find('.help').remove()
+    console.log(file)
+}
+

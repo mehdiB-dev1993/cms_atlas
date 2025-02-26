@@ -30,20 +30,8 @@ class MenuStoreRequest extends FormRequest
             'icon' => 'required',
             'thumbnail' => 'required',
             'header_image' => 'required',
+            'order' => 'required'
         ];
     }
 
-/*    public function messages(): array
-    {
-        return [
-            'title.required' => 'فیلد عنوان منو الزامی میباشد!',
-            'description.required' => 'فیلد توضیحات الزامی میباشد!',
-            'text.required' => 'فیلد خلاصه متن الزامی میباشد!',
-            'full_text.required' => 'فیلد متن کامل الزامی میباشد!',
-            'keywords.required' => 'فیلد کلمات کلیدی الزامی میباشد!',
-            'icon.required' => 'فیلد أیکون الزامی میباشد!',
-            'thumb.required' => 'فیلد تصویر کوچک الزامی میباشد!',
-            'header_image.required' => 'فیلد تصویر هدر سایت الزامی میباشد!',
-        ];
-    }*/
 }

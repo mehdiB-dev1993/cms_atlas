@@ -6,14 +6,12 @@
     <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
     <style>
 
-        ul
-        {
+        ul {
             list-style-type: none;
         }
 
-        ul li a
-        {
-            color: #b3b3b3!important;
+        ul li a {
+            color: #b3b3b3 !important;
         }
 
 
@@ -82,7 +80,7 @@
 
                     <ul class="list-group">
                         @foreach($menus as $menu)
-                            @include('admin.menu.menu-tree', ['menu' => $menu, 'level' => 0])
+                            @include('menu.menu-tree', ['menu' => $menu, 'level' => 0])
                         @endforeach
                     </ul>
 
@@ -91,7 +89,6 @@
         </div>
 
     </div>
-
 
 @endsection
 

@@ -26,7 +26,7 @@
                                         @if($menu->parent_id == $this_menu->id)
                                             @php $selected = 'selected' @endphp
                                         @endif
-                                        @include('admin.menu.menu-option', ['menu' => $menu, 'level' => 0,'selected' => $selected])
+                                        @include('menu.menu-option', ['menu' => $menu, 'level' => 0,'selected' => $selected])
                                     @endforeach
                                 </select>
                             </div>
@@ -105,12 +105,27 @@
                         </div>
 
                         <div class="form-group row">
+                            <label class="col-md-3 form-control-label">ترتیب نمایش:</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+
+                                    <input class="form-control" type="number" min="0" value="{{ $this_menu->order }}" name="order" >
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
                             <label class="col-md-3 form-control-label">وضعیت:</label>
                             <div class="col-md-9">
                                 <div class="checkbox">
-                                    <label for="">
-                                        <input class="form-check-input" type="checkbox" id="" name="status" >
-                                    </label>
+                                       @php $checked = '' @endphp
+                                        @if($this_menu->status == 1)
+                                            @php $checked = 'checked' @endphp
+                                        @endif
+                                        <input {{ $checked }} class="form-check-input" type="checkbox" id="" name="status" >
+
                                 </div>
                             </div>
                         </div>
@@ -119,7 +134,6 @@
                 </div>
                 <div class="card-footer">
                     <button type="ارسال" id="submit-menu-update" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> ارسال</button>
-                    <button type="بازیابی" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> بازیابی</button>
                 </div>
             </div>
 
@@ -164,26 +178,4 @@
 
 @endsection
 
-@section('custom-js')
-    <script>
-        function preview_main(tag)
-        {
-            var file = tag.files[0];
 
-            var reader = new FileReader();
-
-
-            if (file && file.type.startsWith('image')) {
-                reader.onload = function(e) {
-                    var previewImage = $(tag).parents('.box-thumbnail-lg').find('.preview-image');
-
-                    previewImage.attr('src', e.target.result);
-                    previewImage.show();
-                };
-            }
-            reader.readAsDataURL(file);
-            $(tag).parents('tr').find('.help').remove()
-            console.log(file)
-        }
-    </script>
-@endsection
