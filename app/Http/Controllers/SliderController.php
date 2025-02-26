@@ -8,20 +8,20 @@ use Illuminate\Http\Request;
 
 class SliderController extends Controller
 {
-    public function index()
+    public function index(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory
     {
         $sliders = Slider::all();
-        return view('admin.slider.list')->with('sliders',$sliders);
+        return view('slider.list')->with('sliders',$sliders);
     }
 
 
-    public function create()
+    public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory
     {
 
-        return view('admin.slider.create');
+        return view('slider.create');
     }
 
-    public function store(SliderStoreRequest $request)
+    public function store(SliderStoreRequest $request): \Illuminate\Http\RedirectResponse
     {
         $request->validated();
         try
@@ -47,38 +47,28 @@ class SliderController extends Controller
     }
 
 
-    public function edit(Request $request)
+    public function edit(Request $request): \Illuminate\Http\JsonResponse
     {
         $slider = Slider::find($request->id);
         return response()->json($slider);
     }
 
-    public function update(Request $request)
+    public function update(Request $request): \Illuminate\Http\JsonResponse
     {
         try {
 
             $slider = Slider::find($request->slider_id);
+            $slider->title = $request->title;
+            $slider->link = $request->link;
+            $slider->banner = $request->banner;
+            $slider->status = $request->has('status') ? 1 : 0;
 
             if ($request->hasFile('banner')) {
                 $originalName = $request->banner->getClientOriginalName();
                 $banner = $request->banner->storeAs('uploads/slider', $originalName, 'public');
-
-
-                $slider->update([
-                    'title' =>   $request->title,
-                    'link' => $request->link,
-                    'banner' =>  $banner,
-                    'status' => $request->has('status') ? 1 : 0
-                ]);
-
-            }else
-            {
-                $slider->update([
-                    'title' =>   $request->title,
-                    'link' => $request->link,
-                    'status' => $request->has('status') ? 1 : 0
-                ]);
+                $slider->banner = $banner;
             }
+            $slider->save();
 
             return response()->json(['success'=>'slider updated successfully']);
 

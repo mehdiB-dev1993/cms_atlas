@@ -13,14 +13,13 @@ class GalleryController extends Controller
 
     public function index(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory
     {
-        /*$data = Gallery::with('galleryItems')->get();*/
         $data = Gallery::with('galleryItems')->paginate(5);
-        return view('admin.gallery.list')->with('data',$data);
+        return view('gallery.list')->with('data',$data);
     }
 
     public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory
     {
-        return view('admin.gallery.create');
+        return view('gallery.create');
     }
 
     public function store(GalleryStoreRequest $request)
@@ -45,13 +44,12 @@ class GalleryController extends Controller
             $items = [];
             foreach ($GalleryItems['item'] as $index => $img)
             {
-                /*$img =  $img->store('uploads/gallery', 'public');*/
                 $originalName = $img->getClientOriginalName();
                 $img = $img->storeAs('uploads/gallery', $originalName, 'public');
 
                 $items[] = [
                     'gallery_id'   => $gallery->id,
-                    'title'        =>$originalName,
+                    'title'        => $originalName,
                     'description'  => $GalleryItems['item_description'][$index] ?? null,
                     'src'          => $img,
                     'alt'          => $GalleryItems['item_alt'][$index] ?? null,
@@ -77,7 +75,7 @@ class GalleryController extends Controller
 
     public function edit(Request $request)
     {
-        //$gallery =  Gallery::find($request->id)->galleryItems()->get();
+
         $gallery =  Gallery::with('galleryItems')->find($request->id);
         return response()->json($gallery);
     }
@@ -120,7 +118,6 @@ class GalleryController extends Controller
                 return preg_match('/^item_\d+$/', $key);
             });
 
-            Log::info(print_r($items->toArray(), true));
 
             foreach ($items as $item)
             {
