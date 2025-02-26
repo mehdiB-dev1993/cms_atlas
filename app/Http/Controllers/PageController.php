@@ -13,14 +13,14 @@ class PageController extends Controller
     public function index()
     {
         $pages = Page::with('menu')->get();
-        return view('page.index')->with('pages',$pages);
+        return view('page.list')->with('pages',$pages);
     }
 
     public function create()
     {
         $menus = Menu::where('parent_id', 0)->with('childrenRecursive')->get();
         $galleries = Gallery::all();
-        return view('page.page-create')->with('menus', $menus)->with('galleries', $galleries);
+        return view('page.create')->with('menus', $menus)->with('galleries', $galleries);
     }
 
     public function store(PageStoreRequest $request)
@@ -37,13 +37,12 @@ class PageController extends Controller
             $page->description = $request->description;
             $page->keywords = $request->keywords;
             $page->source = $request->source;
-            $page->order = 0;
             $page->status = $request->has('status') ? 1 : 0;
             $page->date = $request->date;
 
-            if ($request->hasFile('page_icon'))
+            if ($request->hasFile('icon'))
             {
-                $path_icon = $request->file('page_icon')->store('uploads/icons', 'public');
+                $path_icon = $request->file('icon')->store('uploads/icons', 'public');
                 $page->icon = $path_icon;
             }
 
@@ -84,7 +83,7 @@ class PageController extends Controller
         $menus = Menu::where('parent_id', 0)->with('childrenRecursive')->get();
         $galleries = Gallery::all();
         $page = Page::find($request->id);
-        return view('page.page-edit')->with('menus', $menus)->with('galleries', $galleries)->with('page', $page);
+        return view('page.edit')->with('menus', $menus)->with('galleries', $galleries)->with('page', $page);
     }
 
     public function update(Request $request)
@@ -102,7 +101,6 @@ class PageController extends Controller
             $page->description = $request->description;
             $page->keywords = $request->keywords;
             $page->source = $request->source;
-            $page->order = 0;
             $page->status = $request->has('status') ? 1 : 0;
             $page->date = $request->date;
 

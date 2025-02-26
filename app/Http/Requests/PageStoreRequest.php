@@ -32,7 +32,7 @@ class PageStoreRequest extends FormRequest
             'source' => 'required',
             'date' => 'required',
             'status' => 'required',
-            'page_icon' => 'required',
+            'icon' => 'required',
             'thumbnail' => 'required',
             'header_image' => 'required',
         ];

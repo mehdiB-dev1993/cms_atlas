@@ -26,7 +26,7 @@
                             <div class="col-md-9">
                                 <select name="menu_id" class="form-select">
                                          @foreach($menus as $menu)
-                                            @include('admin.menu.menu-option', ['menu' => $menu, 'level' => 0,'selected' => ''])
+                                            @include('menu.menu-option', ['menu' => $menu, 'level' => 0,'selected' => ''])
                                         @endforeach
                                 </select>
                             </div>
@@ -95,7 +95,7 @@
                             <label class="col-md-3 form-control-label" for="">آیکون:</label>
                             <div class="col-md-9">
                                 <div class="input-group mb-3">
-                                    <input type="file" name="page_icon" class="form-control" id="">
+                                    <input type="file" name="icon" class="form-control" id="">
                                 </div>
                             </div>
                         </div>

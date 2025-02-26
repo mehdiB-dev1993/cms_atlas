@@ -26,7 +26,7 @@
                             <div class="col-md-9">
                                 <select name="menu_id" class="form-select">
                                     @foreach($menus as $menu)
-                                        @include('admin.menu.menu-option', ['menu' => $menu, 'level' => 0,'selected' => ''])
+                                        @include('menu.menu-option', ['menu' => $menu, 'level' => 0,'selected' => ''])
                                     @endforeach
                                 </select>
                             </div>
@@ -216,26 +216,4 @@
 
 
 
-@section('custom-js')
-    <script>
-        function preview_main(tag)
-        {
-            var file = tag.files[0];
 
-            var reader = new FileReader();
-
-
-            if (file && file.type.startsWith('image')) {
-                reader.onload = function(e) {
-                    var previewImage = $(tag).parents('.box-thumbnail-lg').find('.preview-image');
-
-                    previewImage.attr('src', e.target.result);
-                    previewImage.show();
-                };
-            }
-            reader.readAsDataURL(file);
-            $(tag).parents('tr').find('.help').remove()
-            console.log(file)
-        }
-    </script>
-@endsection

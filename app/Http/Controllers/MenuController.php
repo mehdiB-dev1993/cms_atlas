@@ -9,19 +9,19 @@ use Illuminate\Http\Request;
 class MenuController extends Controller
 {
 
-    public function index()
+    public function index(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory
     {
         $menus = Menu::where('parent_id', 0)->with('childrenRecursive')->get();
         return view('menu.list')->with('menus', $menus);
     }
 
-    public function create()
+    public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory
     {
         $menus = Menu::where('parent_id', 0)->with('childrenRecursive')->get();
         return view('menu.create')->with('menus', $menus);
     }
 
-    public function store(MenuStoreRequest $request)
+    public function store(MenuStoreRequest $request): \Illuminate\Http\RedirectResponse
     {
 
         $request->validated();
@@ -75,14 +75,14 @@ class MenuController extends Controller
     }
 
 
-    public function edit(Request $request)
+    public function edit(Request $request): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory
     {
         $menu = Menu::find($request->id);
         $menus = Menu::where('parent_id', 0)->with('childrenRecursive')->get();
         return view('menu.edit')->with('this_menu', $menu)->with('menus', $menus);
     }
 
-    public function update(Request $request)
+    public function update(Request $request): \Illuminate\Http\RedirectResponse
     {
         try
         {

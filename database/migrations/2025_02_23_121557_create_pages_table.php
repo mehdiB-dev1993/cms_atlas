@@ -25,7 +25,6 @@ return new class extends Migration
             $table->string('thumbnail')->nullable();
             $table->string('icon')->nullable();
             $table->string('date')->index();
-            $table->integer('order')->index();
             $table->integer('status')->default(1)->index();
             $table->softDeletes();
             $table->timestamps();
