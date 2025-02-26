@@ -21,7 +21,7 @@
                                 <select name="parent_id" class="form-select">
                                     <option value="0">گروه اصلی</option>
                                     @foreach($course_groups as $cg)
-                                        @include('course_group.coursegroup-option', ['cg' => $cg, 'level' => 0])
+                                        @include('course_group.coursegroup-option', ['cg' => $cg, 'level' => 0,'selected' => ''])
                                     @endforeach
                                 </select>
                             </div>

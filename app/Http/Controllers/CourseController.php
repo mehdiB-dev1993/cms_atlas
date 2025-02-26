@@ -26,6 +26,7 @@ class CourseController extends Controller
     {
         $request->validated();
 
+
         try
         {
             $course = new Course();
@@ -36,7 +37,7 @@ class CourseController extends Controller
             $course->description = $request->description;
             $course->keywords = $request->keywords;
             $course->source = $request->source;
-            $course->order = 0;
+            $course->order = $request->order;
             $course->status = $request->has('status') ? 1 : 0;
             $course->date = $request->date;
             $course->price = $request->price;
@@ -60,7 +61,7 @@ class CourseController extends Controller
 
             $course->courseGroups()->attach($request->cg_id,['created_at' => now(), 'updated_at' => now()]);
 
-            return redirect()->back()->with('success','create success');
+            return redirect()->back()->with('success','عملیات دخیره دوره با موفقیت انجام شد.');
         }
         catch (\Exception $e)
         {
@@ -111,7 +112,7 @@ class CourseController extends Controller
             $course->description = $request->description;
             $course->keywords = $request->keywords;
             $course->source = $request->source;
-            $course->order = 0;
+            $course->order = $request->order;
             $course->status = $request->has('status') ? 1 : 0;
             $course->date = $request->date;
             $course->price = $request->price;

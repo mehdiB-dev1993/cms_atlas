@@ -31,7 +31,6 @@ class CourseStoreRequest extends FormRequest
             'keywords' => 'required',
             'source' => 'required',
             'date' => 'required',
-            'status' => 'required',
             'icon' => 'required',
             'thumbnail' => 'required',
             'header_image' => 'required',

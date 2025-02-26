@@ -23,7 +23,7 @@
                             <div class="col-md-9">
                                 <select name="cg_id" class="form-select">
                                     @foreach($course_groups as $cg)
-                                        @include('course_group.coursegroup-option', ['cg' => $cg, 'level' => 0])
+                                        @include('course_group.coursegroup-option', ['cg' => $cg, 'level' => 0,'selected' => ''])
                                     @endforeach
                                 </select>
                             </div>
@@ -152,12 +152,22 @@
                         </div>
 
                         <div class="form-group row">
+                            <label class="col-md-3 form-control-label">ترتیب نمایش:</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+
+                                    <input class="form-control" type="number" min="0" value="0" name="order" >
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label class="col-md-3 form-control-label">وضعیت:</label>
                             <div class="col-md-9">
                                 <div class="checkbox">
                                     <label for="">
-
-                                        <input class="form-check-input" type="checkbox" id="" name="status" >
+                                        <input class="form-check-input" value="" type="checkbox" id="" name="status" >
                                     </label>
                                 </div>
                             </div>
@@ -168,7 +178,7 @@
                 </div>
                 <div class="card-footer">
                     <button type="ارسال" id="submit-course-store" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> ارسال</button>
-                    <button type="بازیابی" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> بازیابی</button>
+
                 </div>
             </div>
 
