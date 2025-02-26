@@ -54,3 +54,21 @@ th
 {
     max-width: 60%!important;
 }
+
+
+.cursor-pointer
+{
+    cursor: pointer!important;
+}
+
+.font-10-pt
+{
+    font-size: 10pt!important;
+}
+
+.hr-custom
+{
+    height: 2px;
+    color: #dbdbdb;
+}
+

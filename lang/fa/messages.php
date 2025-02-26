@@ -11,7 +11,7 @@ return [
     'View_the_menu_list' => 'مشاهده لیست منو',
     'Page_settings' => 'تنظیمات صفحات',
     'View_the_list_of_pages' => 'مشاهده لیست صفحات',
-    'Courses' => 'دوره های اموزشی',
+    'Courses' => 'دوره های آموزشی',
     'View_the_list_of_Courses' => 'مشاهده لیست دوره ها',
     'View_the_list_of_Courses_groups' => 'مشاهده لیست گروه بندی'
 ];

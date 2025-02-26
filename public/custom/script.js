@@ -53,6 +53,19 @@ $('body').on('click','#submit-course-group-update',function ()
     }
 )
 
+$('body').on('click','#submit-course-store',function ()
+    {
+        $('#course-store').submit()
+    }
+)
+
+$('body').on('click','#submit-course-update',function ()
+    {
+        $('#course-update').submit()
+    }
+)
+
+
 
 
 

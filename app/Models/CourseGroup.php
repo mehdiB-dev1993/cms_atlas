@@ -18,4 +18,11 @@ class CourseGroup extends Model
     {
         return $this->hasMany(CourseGroup::class, 'parent_id')->with('childrenRecursive');
     }
+
+
+
+  public function courses(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+  {
+    return $this->belongsToMany(Course::class);
+  }
 }

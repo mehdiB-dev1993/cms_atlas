@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CourseGroupStoreRequest;
 use App\Http\Requests\CourseStoreRequest;
 use App\Models\CourseGroup;
 use App\Models\Menu;
@@ -22,7 +23,7 @@ class CourseGroupController extends Controller
         return view('course_group.create')->with('course_groups', $course_groups);
     }
 
-    public function store(CourseStoreRequest $request)
+    public function store(CourseGroupStoreRequest $request)
     {
         $request->validated();
         try {

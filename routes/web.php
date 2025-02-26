@@ -74,15 +74,6 @@ Route::group(['prefix' => 'page'], function ()
 );
 
 
-
-
-Route::group(['prefix' => 'course'], function ()
-{
-    Route::get('/list',[CourseController::class,'index'])->name('course.index');
-
-}
-);
-
 Route::group(['prefix' => 'course_group'], function ()
 {
     Route::get('/list',[CourseGroupController::class,'index'])->name('course_group.index');
@@ -91,6 +82,19 @@ Route::group(['prefix' => 'course_group'], function ()
     Route::get('/edit/{id}', [CourseGroupController::class,'edit'])->name('course_group.edit');
     Route::post('/update', [CourseGroupController::class,'update'])->name('course_group.update');
     Route::get('/destroy/{id}', [CourseGroupController::class,'destroy'])->name('course_group.destroy');
+}
+);
+
+
+Route::group(['prefix' => 'course'], function ()
+{
+    Route::get('/list',[CourseController::class,'index'])->name('course.index');
+    Route::get('/create',[CourseController::class,'create'])->name('course.create');
+    Route::post('/store', [CourseController::class,'store'])->name('course.store');
+    Route::get('/show/{id}', [CourseController::class,'show'])->name('course.show');
+    Route::get('/edit/{id}', [CourseController::class,'edit'])->name('course.edit');
+    Route::post('/update', [CourseController::class,'update'])->name('course.update');
+    Route::get('/destroy/{id}', [CourseController::class,'destroy'])->name('course.destroy');
 
 }
 );

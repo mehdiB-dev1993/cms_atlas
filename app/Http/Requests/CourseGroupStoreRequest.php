@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CourseStoreRequest extends FormRequest
+class CourseGroupStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,22 +23,9 @@ class CourseStoreRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'cg_id' => 'required',
-            'gallery_id' => 'required',
-            'text' => 'required',
-            'full_text' => 'required',
             'description' => 'required',
-            'keywords' => 'required',
-            'source' => 'required',
-            'date' => 'required',
-            'status' => 'required',
-            'icon' => 'required',
             'thumbnail' => 'required',
-            'header_image' => 'required',
-            'price' => 'required',
-            'duration' => 'required',
-            'teacher' => 'required',
-            'link' => 'required',
+            'status' => 'required',
         ];
     }
 }
