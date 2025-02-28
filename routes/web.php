@@ -33,6 +33,7 @@ Route::group(['prefix'=>'gallery','namespace'=>'Gallery'],function()
     Route::post('/store', [GalleryController::class, 'store'])->name('gallery.store');
     Route::get('/edit/{id}', [GalleryController::class, 'edit'])->name('gallery.edit');
     Route::post('/update', [GalleryController::class, 'update'])->name('gallery.update');
+    Route::get('/delete/{id}', [GalleryController::class, 'delete'])->name('gallery.delete');
 }
 );
 

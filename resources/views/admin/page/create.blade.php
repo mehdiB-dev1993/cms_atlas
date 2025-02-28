@@ -142,6 +142,9 @@
                         </div>
 
 
+
+
+
                         <div class="form-group row">
                             <label class="col-md-3 form-control-label" for="">انتخاب گالری:</label>
                             <div class="col-md-9">
@@ -173,7 +176,6 @@
                 </div>
                 <div class="card-footer">
                     <button type="ارسال" id="submit-page-store" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> ارسال</button>
-                    <button type="بازیابی" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> بازیابی</button>
                 </div>
             </div>
 

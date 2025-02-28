@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('gallery_items', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('gallery_id')->index()->constrained()->onDelete('cascade');
             $table->string('title');
             $table->text('description');
-            $table->foreignId('gallery_id')->index()->constrained()->onDelete('cascade');
             $table->string('src');
             $table->string('alt');
             $table->string('link');
+            $table->integer('order');
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });

@@ -26,8 +26,8 @@
                             <th>توضیحات</th>
                             <th>تصویر بند انگشتی</th>
                             <th>وضعیت</th>
-                            <th>حذف</th>
                             <th>ویرایش</th>
+                            <th>حذف</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -43,8 +43,8 @@
                                     <span class="badge badge-warning">غیر فعال</span>
                                 @endif
                             </td>
+                            <td><a href="{{ route('gallery.edit',$gallery->id) }}"><i class="bi bi-pencil-square"></i></a></td>
                             <td><i class="bi bi-trash cursor-pointer "></i></td>
-                            <td><i onclick="GalleryEdit('{{ route('gallery.edit',$gallery->id) }}')" class="bi bi-pencil-square"></i></td>
 
                         </tr>
                         @endforeach
@@ -66,7 +66,7 @@
 
 @section('custom-js')
 
-     <button type="button" class="btn btn-primary" id="modal-gallery" data-bs-toggle="modal" data-bs-target="#exampleModal" style="visibility: hidden">
+{{--     <button type="button" class="btn btn-primary" id="modal-gallery" data-bs-toggle="modal" data-bs-target="#exampleModal" style="visibility: hidden">
     </button>
 
     <!-- Modal -->
@@ -88,11 +88,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--}}
 
     <script>
         /**************************************************/
-        function GalleryEdit($url)
+/*        function GalleryEdit($url)
         {
             $.ajax(
                 {
@@ -145,9 +145,9 @@
 
                 }
             )
-        }
+        }*/
         /**************************************************/
-        function plus(tag) {
+/*        function plus(tag) {
 
 
 
@@ -160,14 +160,14 @@
 
             $('body').find('#gallery-edit table tbody').append($tmp)
 
-        }
+        }*/
         /**************************************************/
-        function drop(tag)
+/*        function drop(tag)
         {
             $(tag).parents('tr').remove()
-        }
+        }*/
         /**************************************************/
-        function preview_main(tag)
+/*        function preview_main(tag)
         {
             var file = tag.files[0];
 
@@ -185,9 +185,9 @@
             reader.readAsDataURL(file);
             $(tag).parents('tr').find('.help').remove()
             console.log(file)
-        }
+        }*/
         /**************************************************/
-        function preview(tag)
+/*        function preview(tag)
         {
             var file = tag.files[0];
 
@@ -205,15 +205,15 @@
                 reader.readAsDataURL(file);
             $(tag).parents('tr').find('.help').remove()
             console.log(file)
-        }
+        }*/
         /**************************************************/
-        $('body').on('click','#edit-btn-gallery',function (e)
+/*        $('body').on('click','#edit-btn-gallery',function (e)
             {
                 $('#gallery-edit').submit()
             }
-        )
+        )*/
         /**************************************************/
-        $('body').on('submit','#gallery-edit',function (e)
+ /*       $('body').on('submit','#gallery-edit',function (e)
         {
                 e.preventDefault()
                const $form = document.getElementById('gallery-edit');
@@ -245,7 +245,7 @@
 
 
         }
-        )
+        )*/
         /**************************************************/
     </script>
 

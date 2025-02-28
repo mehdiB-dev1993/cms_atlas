@@ -8,13 +8,15 @@ class GalleryItems extends Model
 {
     protected $fillable =
         [
+            'gallery_id',
             'title',
             'description',
-            'gallery_id',
             'src',
             'alt',
             'link',
+            'order',
             'status',
+
         ];
     public function gallery(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {

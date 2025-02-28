@@ -9,9 +9,16 @@ class Gallery extends Model
     protected $table = 'gallery';
     protected $fillable =
         [
+            'name',
             'title',
             'description',
+            'abstract',
+            'text',
+            'keywords',
+            'header_image',
             'thumbnail',
+            'icon',
+            'order',
             'status',
         ];
 
