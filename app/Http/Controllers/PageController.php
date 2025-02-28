@@ -39,6 +39,7 @@ class PageController extends Controller
             $page->keywords = $request->keywords;
             $page->source_link = $request->source_link;
             $page->status = $request->has('status') ? 1 : 0;
+            $page->order = $request->order;
             $page->published_at = $request->published_at;
 
             if ($request->hasFile('icon'))
@@ -104,6 +105,7 @@ class PageController extends Controller
             $page->keywords = $request->keywords;
             $page->source_link = $request->source_link;
             $page->status = $request->has('status') ? 1 : 0;
+            $page->order = $request->order;
             $page->published_at = $request->published_at;
 
             if ($request->hasFile('icon'))

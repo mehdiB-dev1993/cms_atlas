@@ -31,6 +31,12 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label" for="">نام کامل صفحه: </label>
+                            <div class="col-md-9">
+                                <input value="" type="text" id="text-input" name="name" class="form-control" placeholder="نام کامل صفحه">
+                            </div>
+                        </div>
 
 
                         <div class="form-group row">
@@ -40,12 +46,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label class="col-md-3 form-control-label" for="">نام کامل صفحه: </label>
-                            <div class="col-md-9">
-                                <input value="" type="text" id="text-input" name="name" class="form-control" placeholder="نام کامل صفحه">
-                            </div>
-                        </div>
 
 
                         <div class="form-group row">
@@ -119,11 +119,24 @@
                             </div>
                         </div>
 
+
+
                         <div class="form-group row">
                             <label class="col-md-3 form-control-label" for="">فایل ضمیمه:</label>
                             <div class="col-md-9">
                                 <div class="input-group mb-3">
                                     <input name="attached_file" type="file" class="form-control" id="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label">ترتیب نمایش:</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+
+                                    <input class="form-control" type="number" min="0" value="0" name="order" >
+
                                 </div>
                             </div>
                         </div>

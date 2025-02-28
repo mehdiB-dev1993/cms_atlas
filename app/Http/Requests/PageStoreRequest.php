@@ -22,8 +22,8 @@ class PageStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required',
             'name' => 'required',
+            'title' => 'required',
             'menu_id' => 'required',
             'abstract' => 'required',
             'text' => 'required',
@@ -31,6 +31,7 @@ class PageStoreRequest extends FormRequest
             'keywords' => 'required',
             'source_link' => 'required',
             'published_at' => 'required',
+            'order' => 'required',
             'status' => 'required',
             'icon' => 'required',
             'thumbnail' => 'required',
@@ -40,24 +41,4 @@ class PageStoreRequest extends FormRequest
     }
 
 
-/*    public function messages(): array
-    {
-        return [
-            'full_page_name.required' => 'فیلد عنوان کامل صفحه الزامی میباشد!',
-            'page_name_in_menu.required' => 'فیلد عنوان صفحه در منو الزامی میباشد!',
-            'menu_id.required' => 'فیلد انتخاب منو الزامی میباشد!',
-            'text.required' => 'فیلد خلاصه متن الزامی میباشد!',
-            'full_text.required' => 'فیلد متن کامل الزامی میباشد!',
-            'description.required' => 'فیلد توضیحات الزامی میباشد!',
-            'keywords.required' => 'فیلد کلمات کلیدی الزامی میباشد!',
-            'source.required' => 'فیلد لینک منبع الزامی میباشد!',
-            'date.required' => 'فیلد تاریخ الزامی میباشد!',
-            'status.required' => 'فیلد وضعیت الزامی میباشد!',
-            'page_icon.required' => 'فایل آیکون صفحه بارگذاری نشده است!',
-            'thumb.required' => 'فایل تصویر بند انگشتی بارگذاری نشده است!',
-            'header_image.required' => 'فایل تصویر هدر بارگذاری نشده است!',
-            'gallery_image.required' => 'فیلد تصاویر گالری بارگذاری نشده است!',
-
-        ];
-    }*/
 }

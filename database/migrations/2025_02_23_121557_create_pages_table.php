@@ -27,8 +27,9 @@ return new class extends Migration
             $table->string('thumbnail');
             $table->string('icon');
             $table->string('attached_file');
+            $table->integer('order');
             $table->integer('status')->default(1)->index();
-            $table->integer('visit')->default(1);
+            $table->integer('visit')->default(0);
             $table->string('published_at')->index();
             $table->softDeletes();
             $table->timestamps();

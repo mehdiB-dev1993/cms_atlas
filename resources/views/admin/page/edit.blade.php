@@ -133,6 +133,18 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label">ترتیب نمایش:</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+
+                                    <input class="form-control" type="number" min="0" value="{{ $page->order }}" name="order" >
+
+                                </div>
+                            </div>
+                        </div>
+
+
 
                         <div class="form-group row">
                             <label class="col-md-3 form-control-label" for="">انتخاب گالری:</label>
