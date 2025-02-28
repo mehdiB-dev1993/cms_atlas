@@ -16,7 +16,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <i class="fa fa-align-justify"></i> Combined All Table
+                    <i class="fa fa-align-justify"></i> لیست گالری
                 </div>
                 <div class="card-body">
                     <table class="table table-bordered table-striped table-sm">

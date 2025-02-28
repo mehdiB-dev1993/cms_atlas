@@ -33,6 +33,12 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label class="col-md-3 form-control-label" for="">نام:</label>
+                            <div class="col-md-9">
+                                <input value="{{ $this_menu->name }}" type="text" id="text-input" name="name" class="form-control" placeholder="نام منو">
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label class="col-md-3 form-control-label" for="">عنوان:</label>
                             <div class="col-md-9">
                                 <input value="{{$this_menu->title}}" type="text" id="text-input" name="title"

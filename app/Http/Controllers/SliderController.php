@@ -11,14 +11,14 @@ class SliderController extends Controller
     public function index(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory
     {
         $sliders = Slider::all();
-        return view('slider.list')->with('sliders',$sliders);
+        return view('admin.slider.list')->with('sliders',$sliders);
     }
 
 
     public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory
     {
 
-        return view('slider.create');
+        return view('admin.slider.create');
     }
 
     public function store(SliderStoreRequest $request): \Illuminate\Http\RedirectResponse

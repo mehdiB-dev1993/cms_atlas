@@ -30,9 +30,15 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label class="col-md-3 form-control-label" for="">نام:</label>
+                            <div class="col-md-9">
+                                <input value="" type="text" id="text-input" name="name" class="form-control" placeholder="نام منو">
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label class="col-md-3 form-control-label" for="">عنوان:</label>
                             <div class="col-md-9">
-                                <input value="{{--{{$menu->title}}--}}" type="text" id="text-input" name="title" class="form-control" placeholder="عنوان منو">
+                                <input value="" type="text" id="text-input" name="title" class="form-control" placeholder="عنوان منو">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -116,7 +122,6 @@
                 </div>
                 <div class="card-footer">
                     <button type="ارسال" id="submit-menu-store" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> ارسال</button>
-                    <button type="بازیابی" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> بازیابی</button>
                 </div>
             </div>
 

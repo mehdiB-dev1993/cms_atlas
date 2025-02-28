@@ -9,6 +9,7 @@ class Menu extends Model
     protected $fillable = [
         'parent_id',
         'admin_id',
+        'name',
         'title',
         'description',
         'abstract',

@@ -31,6 +31,7 @@ class MenuController extends Controller
             $menu = new Menu();
 
             $menu->parent_id = $request->parent_id;
+            $menu->name = $request->name;
             $menu->title = $request->title;
             $menu->description = $request->description;
             $menu->abstract	= $request->abstract;
@@ -89,6 +90,7 @@ class MenuController extends Controller
             $menu = Menu::find($request->menu_id);
 
             $menu->parent_id = intval( $request->parent_id );
+            $menu->name = $request->name;
             $menu->title = $request->title;
             $menu->description = $request->description;
             $menu->abstract	= $request->abstract;

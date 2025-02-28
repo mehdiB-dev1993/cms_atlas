@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id()->index();
             $table->foreignId('parent_id')->index();
             $table->foreignId('admin_id')->default(0)->index();
+            $table->string('name');
             $table->string('title');
             $table->text('description');
             $table->text('abstract');

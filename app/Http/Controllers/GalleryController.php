@@ -14,12 +14,12 @@ class GalleryController extends Controller
     public function index(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory
     {
         $data = Gallery::with('galleryItems')->paginate(5);
-        return view('gallery.list')->with('data',$data);
+        return view('admin.gallery.list')->with('data',$data);
     }
 
     public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory
     {
-        return view('gallery.create');
+        return view('admin.gallery.create');
     }
 
     public function store(GalleryStoreRequest $request)

@@ -22,6 +22,7 @@ class MenuStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'name' => 'required',
             'title' => 'required',
             'description' => 'required',
             'abstract' => 'required',
