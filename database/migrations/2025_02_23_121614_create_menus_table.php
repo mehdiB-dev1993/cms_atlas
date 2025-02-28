@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->id()->index();
             $table->foreignId('parent_id')->index();
+            $table->foreignId('admin_id')->default(0)->index();
             $table->string('title');
             $table->text('description');
             $table->text('abstract');

@@ -42,7 +42,7 @@
                         <thead>
                         <tr>
                             <th>عنوان صفحه</th>
-                            <th>عنوان صفحه در منو</th>
+                            <th>نام صفحه</th>
                             <th>منبع</th>
                             <th>آیکون</th>
                             <th>تصویر بند انگشتی</th>
@@ -57,8 +57,8 @@
                         @foreach($pages as $page)
                             <tr>
                                 <td class="align-middle text-center">{{ $page->title }}</td>
-                                <td class="align-middle text-center">{{ $page->title_in_menu }}</td>
-                                <td class="align-middle text-center">{{ $page->source }}</td>
+                                <td class="align-middle text-center">{{ $page->name }}</td>
+                                <td class="align-middle text-center">{{ $page->source_link }}</td>
                                 <td class="box-img"><img src="{{ asset('storage/' . $page->icon) }}" alt="Icon"></td>
                                 <td class="box-img"><img src="{{ asset('storage/' . $page->thumbnail) }}" alt="Icon"></td>
                                 <td class="box-img"><img src="{{ asset('storage/' . $page->header_image) }}" alt="Icon"></td>

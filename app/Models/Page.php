@@ -10,26 +10,27 @@ class Page extends Model
         [
             'gallery_id',
             'title',
-            'title_in_menu',
+            'name',
+            'abstract',
             'text',
-            'full_text',
             'description',
             'keywords',
-            'source',
+            'source_link',
             'header_image',
             'thumbnail',
             'icon',
-            'date',
+            'attached_file',
+            'published_at',
             'order',
-            'status '
+            'status'
         ];
 
 
 
 
-        public function menu(): \Illuminate\Database\Eloquent\Relations\HasMany
+        public function menu(): \Illuminate\Database\Eloquent\Relations\BelongsTo
         {
-            return $this->hasMany(Menu::class,'page_id');
+            return $this->belongsTo(Menu::class);
         }
 
         public function gallery(): \Illuminate\Database\Eloquent\Relations\BelongsTo

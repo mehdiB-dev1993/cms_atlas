@@ -23,18 +23,19 @@ class PageStoreRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'title_in_menu' => 'required',
+            'name' => 'required',
             'menu_id' => 'required',
+            'abstract' => 'required',
             'text' => 'required',
-            'full_text' => 'required',
             'description' => 'required',
             'keywords' => 'required',
-            'source' => 'required',
-            'date' => 'required',
+            'source_link' => 'required',
+            'published_at' => 'required',
             'status' => 'required',
             'icon' => 'required',
             'thumbnail' => 'required',
             'header_image' => 'required',
+            'attached_file' => 'required',
         ];
     }
 

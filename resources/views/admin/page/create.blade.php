@@ -26,7 +26,7 @@
                             <div class="col-md-9">
                                 <select name="menu_id" class="form-select">
                                          @foreach($menus as $menu)
-                                            @include('menu.menu-option', ['menu' => $menu, 'level' => 0,'selected' => ''])
+                                            @include('admin.menu.menu-option', ['menu' => $menu, 'level' => 0,'selected' => ''])
                                         @endforeach
                                 </select>
                             </div>
@@ -36,14 +36,14 @@
                         <div class="form-group row">
                             <label class="col-md-3 form-control-label" for="">عنوان کامل صفحه:</label>
                             <div class="col-md-9">
-                                <input value="{{ old('title') }}" type="text" id="text-input" name="title" class="form-control" placeholder="عنوان کامل صفحه">
+                                <input value="" type="text" id="text-input" name="title" class="form-control" placeholder="عنوان کامل صفحه">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-md-3 form-control-label" for="">عنوان صفحه در منو: </label>
+                            <label class="col-md-3 form-control-label" for="">نام کامل صفحه: </label>
                             <div class="col-md-9">
-                                <input value="{{ old('title_in_menu') }}" type="text" id="text-input" name="title_in_menu" class="form-control" placeholder="عنوان صفحه در منو">
+                                <input value="" type="text" id="text-input" name="name" class="form-control" placeholder="نام کامل صفحه">
                             </div>
                         </div>
 
@@ -51,13 +51,13 @@
                         <div class="form-group row">
                             <label class="col-md-3 form-control-label" for="">خلاصه متن:</label>
                             <div class="col-md-9">
-                                <textarea class="form-control" name="text" id="" rows="3"></textarea>
+                                <textarea class="form-control" name="abstract" id="" rows="3"></textarea>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-md-3 form-control-label" for="">متن کامل:</label>
                             <div class="col-md-9">
-                                <textarea class="form-control" name="full_text" id="" rows="6"></textarea>
+                                <textarea class="form-control" name="text" id="" rows="6"></textarea>
                             </div>
                         </div>
 
@@ -78,7 +78,7 @@
                         <div class="form-group row">
                             <label class="col-md-3 form-control-label" for="">لینک منبع:</label>
                             <div class="col-md-9">
-                                <input value="" type="text" id="" name="source" class="form-control" placeholder="لینک منبع">
+                                <input value="" type="text" id="" name="source_link" class="form-control" placeholder="لینک منبع">
                             </div>
                         </div>
 
@@ -86,7 +86,7 @@
                             <label class="col-md-3 form-control-label" for="">تاریخ:</label>
                             <div class="col-md-9">
                                 <div class="input-group mb-3">
-                                    <input value="" type="text" data-jdp name="date" class="form-control" id="">
+                                    <input value="" type="text" data-jdp name="published_at" class="form-control" id="">
                                 </div>
                             </div>
                         </div>
@@ -115,6 +115,15 @@
                             <div class="col-md-9">
                                 <div class="input-group mb-3">
                                     <input name="header_image" type="file" class="form-control" id="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label" for="">فایل ضمیمه:</label>
+                            <div class="col-md-9">
+                                <div class="input-group mb-3">
+                                    <input name="attached_file" type="file" class="form-control" id="">
                                 </div>
                             </div>
                         </div>

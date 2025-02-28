@@ -13,14 +13,14 @@ class PageController extends Controller
     public function index()
     {
         $pages = Page::with('menu')->get();
-        return view('page.list')->with('pages',$pages);
+        return view('admin.page.list')->with('pages',$pages);
     }
 
     public function create()
     {
         $menus = Menu::where('parent_id', 0)->with('childrenRecursive')->get();
         $galleries = Gallery::all();
-        return view('page.create')->with('menus', $menus)->with('galleries', $galleries);
+        return view('admin.page.create')->with('menus', $menus)->with('galleries', $galleries);
     }
 
     public function store(PageStoreRequest $request)
@@ -30,15 +30,16 @@ class PageController extends Controller
         {
             $page = new Page();
             $page->gallery_id = $request->gallery_id;
+            $page->menu_id = $request->menu_id;
             $page->title = $request->title;
-            $page->title_in_menu = $request->title_in_menu;
-            $page->text = $request->text;
-            $page->full_text = $request->full_text;
+            $page->name = $request->name;
             $page->description = $request->description;
+            $page->abstract = $request->abstract;
+            $page->text = $request->text;
             $page->keywords = $request->keywords;
-            $page->source = $request->source;
+            $page->source_link = $request->source_link;
             $page->status = $request->has('status') ? 1 : 0;
-            $page->date = $request->date;
+            $page->published_at = $request->published_at;
 
             if ($request->hasFile('icon'))
             {
@@ -60,13 +61,13 @@ class PageController extends Controller
                 $page->header_image = $path_header_image;
             }
 
+            if ($request->hasFile('attached_file'))
+            {
+                $path_attached_file = $request->file('attached_file')->store('uploads/attached_file', 'public');
+                $page->attached_file = $path_attached_file;
+            }
+
             $page->save();
-
-
-            $menu = Menu::find($request->menu_id);
-            $menu->update([
-                'page_id'=> $page->id
-            ]);
 
 
             return redirect()->back()->with('success','page created successfully');
@@ -83,7 +84,7 @@ class PageController extends Controller
         $menus = Menu::where('parent_id', 0)->with('childrenRecursive')->get();
         $galleries = Gallery::all();
         $page = Page::find($request->id);
-        return view('page.edit')->with('menus', $menus)->with('galleries', $galleries)->with('page', $page);
+        return view('admin.page.edit')->with('menus', $menus)->with('galleries', $galleries)->with('page', $page);
     }
 
     public function update(Request $request)
@@ -94,15 +95,16 @@ class PageController extends Controller
 
             $page = Page::find($request->page_id);
             $page->gallery_id = $request->gallery_id;
+            $page->menu_id = $request->menu_id;
             $page->title = $request->title;
-            $page->title_in_menu = $request->title_in_menu;
+            $page->name = $request->name;
+            $page->abstract = $request->abstract;
             $page->text = $request->text;
-            $page->full_text = $request->full_text;
             $page->description = $request->description;
             $page->keywords = $request->keywords;
-            $page->source = $request->source;
+            $page->source_link = $request->source_link;
             $page->status = $request->has('status') ? 1 : 0;
-            $page->date = $request->date;
+            $page->published_at = $request->published_at;
 
             if ($request->hasFile('icon'))
             {
