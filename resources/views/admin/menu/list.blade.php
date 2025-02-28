@@ -80,7 +80,7 @@
 
                     <ul class="list-group">
                         @foreach($menus as $menu)
-                            @include('menu.menu-tree', ['menu' => $menu, 'level' => 0])
+                            @include('admin.menu.menu-tree', ['menu' => $menu, 'level' => 0])
                         @endforeach
                     </ul>
 

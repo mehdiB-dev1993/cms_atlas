@@ -72,3 +72,13 @@ th
     color: #dbdbdb;
 }
 
+.admin-pass::placeholder
+{
+    text-align: end;
+}
+
+.admin-user
+{
+    text-align: end;
+}
+

@@ -13,18 +13,18 @@ return new class extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id()->index();
-            $table->foreignId('page_id')->default(0)->index()->constrained('pages')->onDelete('cascade');
             $table->foreignId('parent_id')->index();
             $table->string('title');
             $table->text('description');
+            $table->text('abstract');
             $table->text('text');
-            $table->text('full_text');
             $table->string('keywords');
             $table->string('thumbnail');
             $table->string('icon');
             $table->string('header_image');
             $table->integer('order')->index();
             $table->integer('status')->default(0)->index();
+            $table->integer('visit')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

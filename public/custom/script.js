@@ -84,7 +84,7 @@ $('body').on('click','#submit-course-update',function ()
     });
 
 
-CKEDITOR.replace( 'full_text' );
+CKEDITOR.replace( 'text' );
 
 /**************************************************/
 

@@ -12,13 +12,13 @@ class MenuController extends Controller
     public function index(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory
     {
         $menus = Menu::where('parent_id', 0)->with('childrenRecursive')->get();
-        return view('menu.list')->with('menus', $menus);
+        return view('admin.menu.list')->with('menus', $menus);
     }
 
     public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory
     {
         $menus = Menu::where('parent_id', 0)->with('childrenRecursive')->get();
-        return view('menu.create')->with('menus', $menus);
+        return view('admin.menu.create')->with('menus', $menus);
     }
 
     public function store(MenuStoreRequest $request): \Illuminate\Http\RedirectResponse
@@ -33,8 +33,8 @@ class MenuController extends Controller
             $menu->parent_id = $request->parent_id;
             $menu->title = $request->title;
             $menu->description = $request->description;
-            $menu->text	= $request->text;
-            $menu->full_text = $request->full_text;
+            $menu->abstract	= $request->abstract;
+            $menu->text = $request->text;
             $menu->keywords = $request->keywords;
             $menu->order = $request->order;
             $menu->status = $request->has('status')?1:0;
@@ -79,7 +79,7 @@ class MenuController extends Controller
     {
         $menu = Menu::find($request->id);
         $menus = Menu::where('parent_id', 0)->with('childrenRecursive')->get();
-        return view('menu.edit')->with('this_menu', $menu)->with('menus', $menus);
+        return view('admin.menu.edit')->with('this_menu', $menu)->with('menus', $menus);
     }
 
     public function update(Request $request): \Illuminate\Http\RedirectResponse
@@ -91,8 +91,8 @@ class MenuController extends Controller
             $menu->parent_id = intval( $request->parent_id );
             $menu->title = $request->title;
             $menu->description = $request->description;
-            $menu->text	= $request->text;
-            $menu->full_text = $request->full_text;
+            $menu->abstract	= $request->abstract;
+            $menu->text = $request->text;
             $menu->keywords = $request->keywords;
             $menu->order = $request->order;
             $menu->status = $request->has('status')?1:0;
@@ -124,5 +124,9 @@ class MenuController extends Controller
         {
             return  redirect()->back()->with('error', $e->getMessage());
         }
+    }
+    public function destroy(Request $request)
+    {
+        dd($request);
     }
 }

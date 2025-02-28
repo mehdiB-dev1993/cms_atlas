@@ -17,7 +17,9 @@ Route::get('/', function () {
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function()
 {
+
     Route::get('/panel', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
 }
 );
 

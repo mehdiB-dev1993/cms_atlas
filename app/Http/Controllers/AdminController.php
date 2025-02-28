@@ -11,4 +11,9 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
+    public function login(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory
+    {
+        return view('admin.login.login');
+    }
+
 }

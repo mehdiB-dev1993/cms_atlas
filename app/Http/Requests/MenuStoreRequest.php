@@ -24,8 +24,8 @@ class MenuStoreRequest extends FormRequest
         return [
             'title' => 'required',
             'description' => 'required',
+            'abstract' => 'required',
             'text' => 'required',
-            'full_text' => 'required',
             'keywords' => 'required',
             'icon' => 'required',
             'thumbnail' => 'required',

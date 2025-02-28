@@ -13,7 +13,7 @@
     @if($menu->childrenRecursive->isNotEmpty())
         <ul class="submenu">
             @foreach($menu->childrenRecursive as $child)
-                @include('menu.menu-tree', ['menu' => $child, 'level' => $level + 1])
+                @include('admin.menu.menu-tree', ['menu' => $child, 'level' => $level + 1])
             @endforeach
         </ul>
     @endif
