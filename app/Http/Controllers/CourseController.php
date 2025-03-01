@@ -13,14 +13,14 @@ class CourseController extends Controller
     public function index()
     {
         $courses = Course::with('courseGroups')->get();
-        return view('course.list')->with('courses', $courses);
+        return view('admin.course.list')->with('courses', $courses);
     }
 
     public function create()
     {
         $course_groups = CourseGroup::where('parent_id', 0)->with('childrenRecursive')->get();
         $galleries = Gallery::all();
-        return view('course.create')->with('course_groups', $course_groups)->with('galleries', $galleries);
+        return view('admin.course.create')->with('course_groups', $course_groups)->with('galleries', $galleries);
     }
     public function store(CourseStoreRequest $request)
     {
@@ -31,19 +31,22 @@ class CourseController extends Controller
         {
             $course = new Course();
             $course->gallery_id = $request->gallery_id;
+            $course->name = $request->name;
             $course->title = $request->title;
+            $course->abstract = $request->abstract;
             $course->text = $request->text;
-            $course->full_text = $request->full_text;
             $course->description = $request->description;
             $course->keywords = $request->keywords;
-            $course->source = $request->source;
+            $course->source_link = $request->source_link;
             $course->order = $request->order;
             $course->status = $request->has('status') ? 1 : 0;
-            $course->date = $request->date;
+            $course->start_date = $request->start_date;
             $course->price = $request->price;
+            $course->discount = $request->discount;
             $course->duration = $request->duration;
             $course->teacher = $request->teacher;
             $course->link = $request->link;
+            $course->published_at = $request->published_at;
 
             if ($request->hasFile('icon')) {
                 $path_icon = $request->file('icon')->store('uploads/icon', 'public');
@@ -56,6 +59,10 @@ class CourseController extends Controller
             if ($request->hasFile('header_image')) {
                 $path_header_image = $request->file('header_image')->store('uploads/header_image', 'public');
                 $course->header_image = $path_header_image;
+            }
+            if ($request->hasFile('attached_file')) {
+                $attached_file = $request->file('attached_file')->store('uploads/attached_file', 'public');
+                $course->attached_file = $attached_file;
             }
             $course->save();
 
@@ -89,7 +96,7 @@ class CourseController extends Controller
         $course_groups = CourseGroup::where('parent_id', 0)->with('childrenRecursive')->get();
         $this_course = Course::find($request->id);
         $galleries = Gallery::all();
-        return view('course.edit')->with('course_groups', $course_groups)->with('galleries', $galleries)->with('this_course', $this_course);
+        return view('admin.course.edit')->with('course_groups', $course_groups)->with('galleries', $galleries)->with('this_course', $this_course);
 
     }
 
@@ -105,20 +112,23 @@ class CourseController extends Controller
 
             $course = Course::find($request->course_id);
 
-            $course->gallery_id =  $request->gallery_id ;
+            $course->gallery_id = $request->gallery_id;
+            $course->name = $request->name;
             $course->title = $request->title;
+            $course->abstract = $request->abstract;
             $course->text = $request->text;
-            $course->full_text = $request->full_text;
             $course->description = $request->description;
             $course->keywords = $request->keywords;
-            $course->source = $request->source;
+            $course->source_link = $request->source_link;
             $course->order = $request->order;
             $course->status = $request->has('status') ? 1 : 0;
-            $course->date = $request->date;
+            $course->start_date = $request->start_date;
             $course->price = $request->price;
+            $course->discount = $request->discount;
             $course->duration = $request->duration;
             $course->teacher = $request->teacher;
             $course->link = $request->link;
+            $course->published_at = $request->published_at;
 
             if ($request->hasFile('icon')) {
                 $path_icon = $request->file('icon')->store('uploads/icon', 'public');

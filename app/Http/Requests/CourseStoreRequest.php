@@ -24,20 +24,21 @@ class CourseStoreRequest extends FormRequest
         return [
             'title' => 'required',
             'cg_id' => 'required',
-            'gallery_id' => 'required',
+            'abstract' => 'required',
             'text' => 'required',
-            'full_text' => 'required',
             'description' => 'required',
             'keywords' => 'required',
-            'source' => 'required',
-            'date' => 'required',
+            'source_link' => 'required',
             'icon' => 'required',
             'thumbnail' => 'required',
             'header_image' => 'required',
+            'attached_file' => 'required',
             'price' => 'required',
+            'discount' => 'required',
             'duration' => 'required',
             'teacher' => 'required',
             'link' => 'required',
+            'start_date' => 'required',
         ];
     }
 }

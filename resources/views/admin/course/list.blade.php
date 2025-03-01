@@ -65,7 +65,7 @@
                                         <span class="badge badge-warning">غیرفعال</span>
                                     @endif
                                 </td>
-                                <td><i class="bi bi-eye-fill see-course cursor-pointer"></i></td>
+                                <td><i class="bi bi-eye-fill <!--see-course--> cursor-pointer"></i></td>
                                 <td><a href="{{route('course.edit',$course->id)}}"><i class="bi bi-pencil-square cursor-pointer"></i></a></td>
                                 <td><i class="bi bi-trash-fill cursor-pointer"></i></td>
 

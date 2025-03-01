@@ -158,4 +158,11 @@ class PageController extends Controller
     }
 
 
+
+    public function show(Request $request)
+    {
+        dd($request->id);
+    }
+
+
 }

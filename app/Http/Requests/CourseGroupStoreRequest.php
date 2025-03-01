@@ -22,9 +22,16 @@ class CourseGroupStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'name' => 'required',
             'title' => 'required',
             'description' => 'required',
+            'abstract' => 'required',
+            'text' => 'required',
+            'keywords' => 'required',
+            'icon' => 'required',
             'thumbnail' => 'required',
+            'header_image' => 'required',
+            'order' => 'required',
             'status' => 'required',
         ];
     }

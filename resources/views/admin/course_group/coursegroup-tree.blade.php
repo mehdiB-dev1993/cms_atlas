@@ -13,7 +13,7 @@
     @if($cg->childrenRecursive->isNotEmpty())
         <ul class="submenu">
             @foreach($cg->childrenRecursive as $child)
-                @include('course_group.coursegroup-tree', ['cg' => $child, 'level' => $level + 1])
+                @include('admin.course_group.coursegroup-tree', ['cg' => $child, 'level' => $level + 1])
             @endforeach
         </ul>
     @endif

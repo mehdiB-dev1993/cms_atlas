@@ -1,3 +1,7 @@
+*
+{
+    font-family: IRANSans;
+}
 select
 {
     background-position: left 0.75rem center!important;
@@ -82,3 +86,83 @@ th
     text-align: end;
 }
 
+
+.admin-login {
+    direction: rtl;
+    width: 400px;
+    max-height: 450px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 1px solid #536c79;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.admin-login form
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 23px;
+    padding: 10%;
+    background-color: #fff;
+
+}
+.admin-login form .alert
+{
+    padding: 5px!important;
+}
+
+
+
+.admin-login form h4
+{
+    margin: 0 0 20px 0;
+}
+
+.btn-them
+{
+    background: #29363d;
+    color: #ffffff;
+}
+
+.btn-them:hover
+{
+    border:1px solid #29363d!important;
+    background: #ffffff!important;
+    color: #29363d!important;
+}
+
+.admin-username
+{
+
+}
+.admin-username span
+{
+    border-radius: 0 5px 5px 0 !important;
+
+}
+.admin-username input
+{
+    border-radius: 5px 0 0 5px !important;
+}
+.admin-password
+{
+
+}
+
+.admin-password span
+{
+    border-radius: 0 5px 5px 0 !important;
+
+}
+
+.admin-password input
+{
+    border-radius: 5px 0 0 5px !important;
+}

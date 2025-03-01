@@ -82,7 +82,7 @@
 
                     <ul class="list-group">
                         @foreach($course_groups as $cg)
-                            @include('course_group.coursegroup-tree', ['cg' => $cg, 'level' => 0])
+                            @include('admin.course_group.coursegroup-tree', ['cg' => $cg, 'level' => 0])
                         @endforeach
                     </ul>
 

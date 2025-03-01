@@ -78,7 +78,7 @@
 
 
                         <div class="form-group row">
-                            <label class="col-md-3 form-control-label" for="">تصویر کوچک:</label>
+                            <label class="col-md-3 form-control-label" for="">تصویر بند انگشتی:</label>
                             <div class="col-md-9">
                                 <div class="input-group mb-3">
                                     <input name="thumbnail" type="file" class="form-control" id="">

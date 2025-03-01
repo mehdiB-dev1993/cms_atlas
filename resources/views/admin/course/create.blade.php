@@ -19,36 +19,43 @@
 
 
                         <div class="form-group row">
-                            <label class="col-md-3 form-control-label">انتخاب گروهبندی:</label>
+                            <label class="col-md-3 form-control-label">انتخاب گروه:</label>
                             <div class="col-md-9">
                                 <select name="cg_id" class="form-select">
                                     @foreach($course_groups as $cg)
-                                        @include('course_group.coursegroup-option', ['cg' => $cg, 'level' => 0,'selected' => ''])
+                                        @include('admin.course_group.coursegroup-option', ['cg' => $cg, 'level' => 0,'selected' => ''])
                                     @endforeach
                                 </select>
                             </div>
                         </div>
 
-
                         <div class="form-group row">
-                            <label class="col-md-3 form-control-label" for="">عنوان کامل دوره:</label>
+                            <label class="col-md-3 form-control-label" for="">نام:</label>
                             <div class="col-md-9">
-                                <input value="{{ old('title') }}" type="text" id="text-input" name="title" class="form-control" placeholder="عنوان کامل دوره">
+                                <input value="" type="text" id="text-input" name="name" class="form-control" placeholder="نام کامل دوره">
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label" for="">عنوان:</label>
+                            <div class="col-md-9">
+                                <input value="" type="text" id="text-input" name="title" class="form-control" placeholder="عنوان کامل دوره">
+                            </div>
+                        </div>
+
 
 
 
                         <div class="form-group row">
                             <label class="col-md-3 form-control-label" for="">خلاصه متن:</label>
                             <div class="col-md-9">
-                                <textarea class="form-control" name="text" id="" rows="3"></textarea>
+                                <textarea class="form-control" name="abstract" id="" rows="3"></textarea>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-md-3 form-control-label" for="">متن کامل:</label>
                             <div class="col-md-9">
-                                <textarea class="form-control" name="full_text" id="" rows="6"></textarea>
+                                <textarea class="form-control" name="text" id="" rows="6"></textarea>
                             </div>
                         </div>
 
@@ -69,18 +76,18 @@
                         <div class="form-group row">
                             <label class="col-md-3 form-control-label" for="">لینک منبع:</label>
                             <div class="col-md-9">
-                                <input value="" type="text" id="" name="source" class="form-control" placeholder="لینک منبع">
+                                <input value="" type="text" id="" name="source_link" class="form-control" placeholder="لینک منبع">
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label class="col-md-3 form-control-label" for="">تاریخ:</label>
                             <div class="col-md-9">
                                 <div class="input-group mb-3">
-                                    <input value="" type="text" data-jdp name="date" class="form-control" id="">
+                                    <input value="" type="text" data-jdp name="published_at" class="form-control" id="" placeholder="تاریخ">
                                 </div>
                             </div>
                         </div>
+
 
                         <div class="form-group row">
                             <label class="col-md-3 form-control-label" for="">آیکون:</label>
@@ -110,6 +117,15 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label" for="">فایل ضمیمه:</label>
+                            <div class="col-md-9">
+                                <div class="input-group mb-3">
+                                    <input name="attached_file" type="file" class="form-control" id="">
+                                </div>
+                            </div>
+                        </div>
+
 
                         <div class="form-group row">
                             <label class="col-md-3 form-control-label" for="">انتخاب گالری:</label>
@@ -129,6 +145,21 @@
                             <label class="col-md-3 form-control-label" for="">قیمت:</label>
                             <div class="col-md-9">
                                 <input value="" type="text" id="text-input" name="price" class="form-control" placeholder="قیمت (تومان)">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label" for="">تخفیف:</label>
+                            <div class="col-md-9">
+                                <input value="" type="text" id="text-input" name="discount" class="form-control" placeholder="تخفیف (تومان)">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label" for="">تاریخ شروع:</label>
+                            <div class="col-md-9">
+                                <div class="input-group mb-3">
+                                    <input value="" type="text" data-jdp name="start_date" class="form-control" id="" placeholder="تاریخ شروع دوره">
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">

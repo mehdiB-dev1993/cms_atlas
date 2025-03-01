@@ -2,6 +2,6 @@
 
 @if($cg->childrenRecursive->isNotEmpty())
     @foreach($cg->childrenRecursive as $child)
-        @include('course_group.coursegroup-option', ['cg' => $child, 'level' => $level + 1,'selected' => $selected])
+        @include('admin.course_group.coursegroup-option', ['cg' => $child, 'level' => $level + 1,'selected' => $selected])
     @endforeach
 @endif
